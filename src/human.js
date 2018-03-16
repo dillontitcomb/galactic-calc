@@ -45,7 +45,7 @@ export class Human {
 				healthScore += 7;
 			}
 		})
-		return avgLife + healthScore;
+		return Math.floor(avgLife + healthScore);
 	}
 };
 

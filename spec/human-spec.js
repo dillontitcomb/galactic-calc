@@ -44,8 +44,8 @@ describe('getPlanetAge', function() {
 	});
 });
 
-describe('getPlanetAge', function() {
-	it('should change age based on planet chosen', function() {
+describe('getLifeExpectancy', function() {
+	it('should return life expectancy based on habits', function() {
 		let human = new Human("dillon", "1991-06-04", "poor", "poor", "poor");
 		expect(human.getLifeExpectancy()).toEqual(avgLife - 21);
 	});

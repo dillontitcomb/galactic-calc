@@ -11,13 +11,13 @@
 			</div>
 			<form class="form-group" id="humanForm">
 				<label for="name">What is your name?</label>
-				<input class="form-control" type="text" name="name"><br>
+				<input class="form-control" type="text" name="name" id="name" required><br>
 
-				<label for="dateOfBirth">What is your date of birth?</label>
-				<input class="form-control" type="date" name="dateOfBirth"><br>
+				<label for="date-of-birth">What is your date of birth?</label>
+				<input class="form-control" type="date" name="date-of-birth" id="date-of-birth" required><br>
 
 				<label for="food-habits">How would you describe your eating habits?</label>
-				<select class="form-control" name="food-habits">
+				<select class="form-control" name="food-habits" id="food-habits" required>
 					<option disable selected value> -- select -- </option>
 					<option value="poor">Unhealthy</option>
 					<option value="ok">Moderately healthy</option>
@@ -25,7 +25,7 @@
 				</select>
 
 				<label for="exercise-habits">How often do you exercise?</label>
-				<select class="form-control" name="exercise-habits">
+				<select class="form-control" name="exercise-habits" id="exercise-habits" required>
 					<option disable selected value> -- select -- </option>
 					<option value="poor">Rarely</option>
 					<option value="ok">Sometimes</option>
@@ -33,14 +33,17 @@
 				</select>
 
 				<label for="social-habits">How often do you see friends and family?</label>
-				<select class="form-control" name="social-habits">
+				<select class="form-control" name="social-habits" id="social-habits" required>
 					<option disable selected value> -- select -- </option>
 					<option value="poor">Rarely</option>
 					<option value="ok">Sometimes</option>
 					<option value="good">Very often</option>
 				</select>
+				<hr>
+				<button type="submit" class="btn btn-primary">See your results!</button>
 			</form>
 			<div id="results">
+
 			</div>
 		</div>
   </body>
