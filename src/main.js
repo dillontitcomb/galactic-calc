@@ -1,4 +1,4 @@
-import { human } from './human.js';
+import { Human } from './human.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';

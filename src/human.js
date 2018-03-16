@@ -16,11 +16,24 @@ export class Human {
 		this.foodHabits = foodHabits;
 		this.exerciseHabits = exerciseHabits;
 		this.socialHabits = socialHabits;
-	};
-
+	}
 	dateOfBirthToAge(conversionType) {
 		let birthday = new Date(this.dateOfBirth);
-		let dateValue = Date.now() - birthday;
-		return dateValue / conversionType;
+		let dateDiff = Date.now() - birthday;
+		return Math.floor(dateDiff / conversionType);
 	}
+	getPlanetAge(planetDays) {
+		let birthday = new Date(this.dateOfBirth);
+		let dateDiff = Date.now() - birthday;
+		let ageYears = Math.floor(dateDiff / toMilli);
+		let planetAgeInYears = Math.floor((ageYears*365) / planetDays);
+		return planetAgeInYears;
+	}
+};
+
+export function getDateDifference(dateOne, dateTwo, conversionType) {
+	let firstDate = new Date(dateOne);
+	let secondDate = new Date(dateTwo);
+	let dateDiff = Math.abs(firstDate - secondDate);
+	return Math.floor(dateDiff / conversionType);
 }
