@@ -6,9 +6,42 @@
   <body>
 		<div class="container">
 			<div class="jumbotron">
-				<h1>GALACTIC CALCULATOR</h1>
+				<h1>Galactic Calculator</h1>
+				<h4>Provide some information about yourself and find out what it means on the <em>cosmic</em> scale!</h4>
+			</div>
+			<form class="form-group" id="humanForm">
+				<label for="name">What is your name?</label>
+				<input class="form-control" type="text" name="name"><br>
+
+				<label for="dateOfBirth">What is your date of birth?</label>
+				<input class="form-control" type="date" name="dateOfBirth"><br>
+
+				<label for="food-habits">How would you describe your eating habits?</label>
+				<select class="form-control" name="food-habits">
+					<option disable selected value> -- select -- </option>
+					<option value="poor">Unhealthy</option>
+					<option value="ok">Moderately healthy</option>
+					<option value="good">Very healthy</option>
+				</select>
+
+				<label for="exercise-habits">How often do you exercise?</label>
+				<select class="form-control" name="exercise-habits">
+					<option disable selected value> -- select -- </option>
+					<option value="poor">Rarely</option>
+					<option value="ok">Sometimes</option>
+					<option value="good">Very often</option>
+				</select>
+
+				<label for="social-habits">How often do you see friends and family?</label>
+				<select class="form-control" name="social-habits">
+					<option disable selected value> -- select -- </option>
+					<option value="poor">Rarely</option>
+					<option value="ok">Sometimes</option>
+					<option value="good">Very often</option>
+				</select>
+			</form>
+			<div id="results">
 			</div>
 		</div>
-
   </body>
 </html>
