@@ -1,3 +1,4 @@
+const toYear = 1;
 const toDay = 365;
 const toHour = 8765.76;
 const toMin = 525945.6;
@@ -8,6 +9,8 @@ const daysMercury = 88;
 const daysVenus = 255;
 const daysMars = 686.98;
 const daysJupiter = 4300;
+
+const avgLife = 78.74;
 
 export class Human {
 	constructor(name, dateOfBirth, foodHabits, exerciseHabits, socialHabits) {
@@ -20,14 +23,29 @@ export class Human {
 	dateOfBirthToAge(conversionType) {
 		let birthday = new Date(this.dateOfBirth);
 		let dateDiff = Date.now() - birthday;
-		return Math.floor(dateDiff / conversionType);
+		let years = Math.floor(dateDiff / toMilli);
+		return years * conversionType;
 	}
-	getPlanetAge(planetDays) {
+	getPlanetAge(planetDays, conversionType) {
 		let birthday = new Date(this.dateOfBirth);
 		let dateDiff = Date.now() - birthday;
 		let ageYears = Math.floor(dateDiff / toMilli);
 		let planetAgeInYears = Math.floor((ageYears*365) / planetDays);
-		return planetAgeInYears;
+		return planetAgeInYears * conversionType;
+	}
+	getLifeExpectancy() {
+		let age = this.dateOfBirthToAge(toYear);
+		let habitArray = [this.foodHabits, this.exerciseHabits, this.socialHabits];
+		let healthScore = 0;
+		habitArray.forEach(function(habit) {
+			if (habit === "poor") {
+				healthScore -= 7;
+			}
+			if (habit === "good") {
+				healthScore += 7;
+			}
+		})
+		return avgLife + healthScore;
 	}
 };
 
@@ -35,5 +53,6 @@ export function getDateDifference(dateOne, dateTwo, conversionType) {
 	let firstDate = new Date(dateOne);
 	let secondDate = new Date(dateTwo);
 	let dateDiff = Math.abs(firstDate - secondDate);
-	return Math.floor(dateDiff / conversionType);
+	let diffYears =  Math.floor(dateDiff / toMilli);
+	return diffYears * conversionType;
 }
