@@ -1,16 +1,22 @@
+// One year in all units
 const toYear = 1;
 const toDay = 365;
 const toHour = 8765.76;
 const toMin = 525945.6;
 const toSec = 31556736;
 const toMilli = 31556736000;
-
+// Days per year on each planet
+const daysEarth = 365.24;
 const daysMercury = 88;
 const daysVenus = 255;
 const daysMars = 686.98;
 const daysJupiter = 4300;
-
+// Avg life expectancy on each planet (years)
 const avgLife = 78.74;
+const mercuryLife = 323;
+const venusLife = 111;
+const marsLife = 41;
+const jupiterLife = 6;
 
 export class Human {
 	constructor(name, dateOfBirth, foodHabits, exerciseHabits, socialHabits) {
@@ -32,6 +38,10 @@ export class Human {
 		let ageYears = Math.floor(dateDiff / toMilli);
 		let planetAgeInYears = Math.floor((ageYears*365) / planetDays);
 		return planetAgeInYears * conversionType;
+	}
+	getLifeExpectancyByPlanet(planetDays) {
+		let earthExpectancy = this.getLifeExpectancy();
+		return Math.floor(((earthExpectancy * daysEarth)/planetDays));
 	}
 	getLifeExpectancy() {
 		let age = this.dateOfBirthToAge(toYear);

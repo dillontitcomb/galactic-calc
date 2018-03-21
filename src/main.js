@@ -12,12 +12,17 @@ const toMin = 525945.6;
 const toSec = 31556736;
 const toMilli = 31556736000;
 
+const daysEarth = 365.24;
 const daysMercury = 88;
 const daysVenus = 255;
 const daysMars = 686.98;
 const daysJupiter = 4300;
 
 const avgLife = 78.74;
+const mercuryLife = 323;
+const venusLife = 111;
+const marsLife = 41;
+const jupiterLife = 6;
 
 $(document).ready(function() {
   $('#humanForm').submit(function(event) {
@@ -36,9 +41,13 @@ $(document).ready(function() {
 		let humanAge = human.dateOfBirthToAge(toYear);
 		let ageInMs = human.dateOfBirthToAge(toMilli);
 		let humanLifeEx = human.getLifeExpectancy();
+    let marsLifeEx = human.getLifeExpectancyByPlanet(daysMars);
+    let venusLifeEx = human.getLifeExpectancyByPlanet(daysVenus);
+    let mercuryLifeEx = human.getLifeExpectancyByPlanet(daysMercury);
+    let jupiterLifeEx = human.getLifeExpectancyByPlanet(daysJupiter);
 		let humanLifeExDesc = "";
 		if (humanAge < humanLifeEx) {
-			humanLifeExDesc = "Finally, based on your current habits, you'll probably live until age " + humanLifeEx + ".";
+			humanLifeExDesc = "Finally, based on your current habits, you'll probably live until age " + humanLifeEx + ". For some context, that's " + marsLifeEx + " Mars years, " + venusLifeEx + " Venus years, " + mercuryLifeEx + " Mercury years, and " + jupiterLifeEx + " Jupiter years. Thanks for playing!";
 		}
 		else {
 			humanLifeExDesc = "One more thing - good on you! You've surpassed your life expectancy. Keep on doing what you're doing!"

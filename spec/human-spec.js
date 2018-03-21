@@ -8,12 +8,17 @@ const toMin = 525945.6;
 const toSec = 31556736;
 const toMilli = 31556736000;
 
+const daysEarth = 365.24
 const daysMercury = 88;
 const daysVenus = 255;
 const daysMars = 686.98;
 const daysJupiter = 4300;
 
 const avgLife = 78.74;
+const mercuryLife = 323;
+const venusLife = 111;
+const marsLife = 41;
+const jupiterLife = 6;
 
 describe('Human', function() {
   it('should test whether a human has its properties', function() {
@@ -41,6 +46,7 @@ describe('getPlanetAge', function() {
 		let ageOnJupiter = human.getPlanetAge(daysJupiter, toYear);
 		expect(ageOnMars).toEqual(13);
 		expect(ageOnJupiter).toEqual(2);
+    let newHuman = new Human("man", "1940-01-01", "ok", "ok", "ok")
 	});
 });
 
@@ -49,6 +55,17 @@ describe('getLifeExpectancy', function() {
 		let human = new Human("dillon", "1991-06-04", "poor", "poor", "poor");
 		expect(human.getLifeExpectancy()).toEqual(Math.floor
       (avgLife - 21));
+	});
+});
+
+describe('getLifeExpectancyByPlanet', function() {
+	it('should return life expectancy on chosen planet', function() {
+		let human = new Human("dillon", "1991-06-04", "ok", "ok", "ok");
+    console.log(human.getLifeExpectancy());
+		expect(human.getLifeExpectancyByPlanet(daysMercury)).toEqual(323);
+    expect(human.getLifeExpectancyByPlanet(daysVenus)).toEqual(111);
+    expect(human.getLifeExpectancyByPlanet(daysMars)).toEqual(41);
+    expect(human.getLifeExpectancyByPlanet(daysJupiter)).toEqual(6);
 	});
 });
 
