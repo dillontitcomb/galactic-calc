@@ -47,7 +47,7 @@ $(document).ready(function() {
 		let ageOnVenus = human.getPlanetAge(daysVenus, toYear);
 		let ageOnMars = human.getPlanetAge(daysMars, toYear);
 		let ageOnJupiter = human.getPlanetAge(daysJupiter, toYear);
-		let resultsDescription = "<h5>Hi there, <em>" + name + "</em>! Here are some fun facts for you based on the information you provided: You are currently <em>" + humanAge + "</em> years old, or exactly <em>" + ageInMs + "</em> milliseconds old. Woah. Also, did you know you'd be a different age if you lived on a different planet? On Mercury, you'd be a whopping <em>" + ageOnMercury + "</em> years old. On Venus you'd be <em>" + ageOnVenus + "</em>, on Mars you'd be <em>" + ageOnMars + "</em>, and on Jupiter you'd be a measly <em>" + ageOnJupiter + "</em> years old! Pretty wild, huh?" + humanLifeExDesc + "</h5>";
+		let resultsDescription = "<h5>Hi there, <em>" + name + "</em>! Here are some fun facts for you based on the information you provided: You are currently <em>" + humanAge + "</em> years old, or exactly <em>" + ageInMs + "</em> milliseconds old. Woah. Also, did you know you'd be a different age if you lived on a different planet? On Mercury, you'd be a whopping <em>" + ageOnMercury + "</em> years old. On Venus you'd be <em>" + ageOnVenus + "</em>, on Mars you'd be <em>" + ageOnMars + "</em>, and on Jupiter you'd be a measly <em>" + ageOnJupiter + "</em> years old! Pretty wild, huh? " + humanLifeExDesc + "</h5>";
 		$("#results").html(resultsDescription);
 		$("#results").show();
   });
