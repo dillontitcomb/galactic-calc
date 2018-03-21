@@ -5,24 +5,26 @@ import $ from 'jquery';
 import { Human } from './human.js';
 import { getDateDifference } from './human.js';
 
+// One year in all units
 const toYear = 1;
 const toDay = 365;
 const toHour = 8765.76;
 const toMin = 525945.6;
 const toSec = 31556736;
 const toMilli = 31556736000;
-
+// Days per year on each planet
 const daysEarth = 365.24;
 const daysMercury = 88;
 const daysVenus = 255;
 const daysMars = 686.98;
 const daysJupiter = 4300;
-
+// Avg life expectancy on each planet (years)
 const avgLife = 78.74;
 const mercuryLife = 323;
 const venusLife = 111;
 const marsLife = 41;
 const jupiterLife = 6;
+
 
 $(document).ready(function() {
   $('#humanForm').submit(function(event) {
